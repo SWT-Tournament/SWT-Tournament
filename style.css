@@ -578,4 +578,271 @@ h1, h2, h3,
     }
 }
 
+.bracket-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
 
+.bracket-section {
+  margin-top: 0;
+}
+
+/* 4 колонки: 1/4, 1/2, финал, чемпион */
+.bracket {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.2fr 0.5fr;  /* последний столбец совсем узкий */
+  column-gap: 10    px;  /* расстояние между колонками меньше */
+}
+
+
+.round-qf,
+.round-sf,
+.round-final,
+.round-champion {
+  display: flex;
+  flex-direction: column;
+  gap: -30px;
+}
+
+/* опускаем все правые колонки вниз, к центру */
+.round-sf,
+.round-final,
+.round-champion {
+  justify-content: center;   /* вертикальный центр в своей колонке */
+  align-items: center;       /* сам блок матчей по центру по горизонтали */
+}
+
+
+
+.round h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #f04747;
+  margin-bottom: 12px;
+}
+
+.match {
+  background: rgba(10, 10, 14, 0.9);
+  border: 1px solid rgba(240, 71, 71, 0.4);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+}
+
+.team {
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.team + .team {
+  margin-top: 4px;
+}
+
+.team:hover {
+  background: rgba(240, 71, 71, 0.2);
+  transform: translateY(-1px);
+}
+
+/* победитель по факту (если захочешь выделять руками) */
+.team--winner {
+  border: 1px solid #22c55e;
+  background: rgba(34, 197, 94, 0.15);
+}
+
+/* выделенный пикем */
+.team.pickem-picked {
+  border: 1px solid #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+}
+
+/* блок пикемов */
+.pickem-section {
+  background: rgba(10, 10, 14, 0.9);
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  padding: 16px 18px;
+  align-self: flex-start;
+}
+
+.section-title-small {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.pickem-text {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.pickem-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.pickem-list li::before {
+  content: "★ ";
+  color: #fbbf24;
+}
+
+/* адаптив */
+@media (max-width: 900px) {
+  .bracket-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== ТАБЛИЦА РЕЙТИНГА ===== */
+
+.rating-table-wrapper {
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(240, 71, 71, 0.4);
+    background: rgba(10, 10, 14, 0.9);
+}
+
+.rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.rating-table thead {
+    background: radial-gradient(circle at top, rgba(255, 50, 50, 0.2), rgba(0, 0, 0, 0.95));
+    border-bottom: 2px solid rgba(240, 71, 71, 0.5);
+}
+
+.rating-table th {
+    padding: 14px 16px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    color: #f04747;
+    font-size: 13px;
+}
+
+.rating-table tbody tr {
+    border-bottom: 1px solid rgba(240, 71, 71, 0.2);
+    transition: background 0.15s ease;
+}
+
+.rating-table tbody tr:hover {
+    background: rgba(240, 71, 71, 0.1);
+}
+
+.rating-table td {
+    padding: 12px 16px;
+    color: #e2e2e2;
+}
+
+.col-rank {
+    width: 60px;
+}
+
+.col-team {
+    width: auto;
+}
+
+.col-points {
+    width: 80px;
+    text-align: center;
+}
+
+.col-status {
+    width: 140px;
+}
+
+.rank {
+    font-weight: 600;
+    color: #ff6666;
+    font-size: 15px;
+}
+
+.team-name {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.points {
+    font-weight: 700;
+    color: #fbbf24;
+    font-size: 15px;
+}
+
+/* строки плей-офф */
+.row-playoff {
+    background: rgba(34, 197, 94, 0.06);
+}
+
+.row-playoff:hover {
+    background: rgba(34, 197, 94, 0.15);
+}
+
+.row-playoff .rank {
+    color: #22c55e;
+}
+
+/* бейджи */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.badge-playoff {
+    background: rgba(34, 197, 94, 0.25);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+.badge-eliminated {
+    background: rgba(253, 2, 2, 0.25);
+    color: #9ca3af;
+    border: 1px solid rgba(107, 114, 128, 0.5);
+}
+
+/* адаптив таблицы */
+@media (max-width: 600px) {
+    .rating-table th,
+    .rating-table td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .col-rank {
+        width: 50px;
+    }
+
+    .col-points {
+        width: 70px;
+    }
+
+    .col-status {
+        width: 100px;
+    }
+
+    .badge {
+        padding: 3px 8px;
+        font-size: 11px;
+    }
+}
