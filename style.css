@@ -785,9 +785,23 @@ h1, h2, h3,
     font-size: 15px;
 }
 
-/* строки плей-офф */
+/* строки финалистов (топ-2) - ЗОЛОТЫЕ */
+.row-finalist {
+    background: rgba(31, 226, 5, 0.1);
+}
+
+.row-finalist:hover {
+    background: rgba(58, 226, 7, 0.2);
+}
+
+.row-finalist .rank {
+    color: #08e408;
+    font-size: 16px;
+}
+
+/* строки 1/2 финала (3-4 места) - ЗЕЛЁНЫЕ */
 .row-playoff {
-    background: rgba(34, 197, 94, 0.06);
+    background: rgba(34, 197, 94, 0.1);
 }
 
 .row-playoff:hover {
@@ -796,6 +810,19 @@ h1, h2, h3,
 
 .row-playoff .rank {
     color: #22c55e;
+}
+
+/* строки выбывших в 1/4 (5-8 места) - КРАСНЫЕ */
+.row-eliminated-qf {
+    background: rgba(220, 38, 38, 0.1);
+}
+
+.row-eliminated-qf:hover {
+    background: rgba(220, 38, 38, 0.15);
+}
+
+.row-eliminated-qf .rank {
+    color: #dc2626;
 }
 
 /* бейджи */
@@ -809,16 +836,22 @@ h1, h2, h3,
     letter-spacing: 0.06em;
 }
 
+.badge-finalist {
+    background: rgba(251, 191, 36, 0.25);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.5);
+}
+
 .badge-playoff {
-    background: rgba(34, 197, 94, 0.25);
+    background: rgba(6, 226, 35, 0.25);
     color: #22c55e;
-    border: 1px solid rgba(34, 197, 94, 0.5);
+    border: 1px solid rgba(8, 228, 37, 0.5);
 }
 
 .badge-eliminated {
-    background: rgba(253, 2, 2, 0.25);
-    color: #9ca3af;
-    border: 1px solid rgba(107, 114, 128, 0.5);
+    background: rgba(220, 38, 38, 0.25);
+    color: #dc2626;
+    border: 1px solid rgba(220, 38, 38, 0.5);
 }
 
 /* адаптив таблицы */
@@ -846,3 +879,81 @@ h1, h2, h3,
         font-size: 11px;
     }
 }
+
+/* Победитель матча */
+.team.winner {
+  border: 2px solid #22c55e;
+  background: rgba(34, 197, 94, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Проигравший матч */
+.team.loser {
+  opacity: 0.6;
+  background: rgba(220, 38, 38, 0.2);
+  border: 2px solid rgba(220, 38, 38, 0.6);
+  color: #dc2626;
+  text-decoration: line-through;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Заблокированный матч (весь блок) */
+.match.locked {
+  position: relative;
+}
+
+.match.locked::after {
+  content: "✓ Завершён";
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 11px;
+  color: #22c55e;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  background: rgba(34, 197, 94, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+/* строки финалистов (топ-2) */
+.row-finalist {
+    background: rgba(5, 209, 32, 0.1);
+}
+
+.row-finalist:hover {
+    background: rgba(6, 221, 6, 0.2);
+}
+
+.row-finalist .rank {
+    color: #10d609;
+    font-size: 16px;
+}
+
+.badge-finalist {
+    background: rgba(13, 218, 5, 0.25);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.5);
+}
+/* строки финалистов (топ-2) */
+.row-finalist {
+    background: rgba(43, 236, 4, 0.1);
+}
+
+.row-finalist:hover {
+    background: rgba(5, 240, 5, 0.2);
+}
+
+.row-finalist .rank {
+    color: #0eca07;
+    font-size: 16px;
+}
+
+.badge-finalist {
+    background: rgba(22, 224, 4, 0.25);
+    color: #0ace14;
+    border: 1px solid rgba(10, 224, 10, 0.5);
+}
+
